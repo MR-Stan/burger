@@ -9,3 +9,5 @@ const burger = require('../models/burger.js');
 // router.post
 
 // router.put
+
+module.exports = router;
