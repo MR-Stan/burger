@@ -1,5 +1,7 @@
 const connection = require('./connection.js');
 
+
+
 const orm = {
     // select all information from a given table
     selectAll = function (table, cb) {
