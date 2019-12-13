@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // npm express
 const express = require('express');
 

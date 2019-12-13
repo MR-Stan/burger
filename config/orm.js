@@ -11,7 +11,7 @@ connection.connect(function (err) {
 
 const orm = {
     // select all information from a given table
-    selectAll = function (table, callback) {
+    selectAll: function (table, callback) {
         let sqlQuery = "SELECT * FROM " + table + ";";
         connection.query(sqlQuery, function (err, res) {
             if (err) throw err;
@@ -19,7 +19,7 @@ const orm = {
         });
     },
     //
-    insertBurger = function (table, burger_name, callback) {
+    insertBurger: function (table, burger_name, callback) {
         let sqlQuery = "INSERT INTO " + table + "VALUES (" + burger_name + ");";
         console.log(sqlQuery);
         connection.query(sqlQuery, function (err, res) {
@@ -28,7 +28,7 @@ const orm = {
         });
     },
     //
-    updateBurger = function (id, callback) {
+    updateBurger: function (id, callback) {
         connection.query("UPDATE burgers SET ? WHERE ?",
             [{ devoured: true }, { id: id }],
             function (err, result) {
