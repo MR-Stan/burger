@@ -18,7 +18,10 @@ const orm = {
     },
     //
     insertBurger: function (burger_name, callback) {
-        connection.query("INSERT INTO burgers VALUES (" + burger_name + ");", function (err, res) {
+        connection.query('INSERT INTO burgers SET ?', {
+            burger_name: burger_name,
+            devoured: false
+        }, function (err, res) {
             if (err) throw err;
             callback(res);
         });

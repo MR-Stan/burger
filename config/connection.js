@@ -7,7 +7,7 @@ const mysql = require('mysql');
 let connection;
 
 if (process.env.JAWSDB_URL) {
-    // DB is JawsDB on Heroku
+    // JawsDB on Heroku
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     connection = mysql.createConnection({
@@ -18,14 +18,5 @@ if (process.env.JAWSDB_URL) {
         database: 'burger_db'
     })
 };
-
-
-// connection.connect(function (err) {
-//     if (err) {
-//         console.log(err.stack);
-//         return;
-//     }
-//     console.log('Connected as id: ' + connection.threadId);
-// });
 
 module.exports = connection;

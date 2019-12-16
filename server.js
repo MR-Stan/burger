@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 // use static content from public
-app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
 // parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -18,9 +18,9 @@ const exphbs = require('express-handlebars');
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require('./controllers/burgers_controller.js');
+const router = require('./controllers/burgers_controller.js');
 
-app.use(routes);
+app.use('/', router);
 
 // start server
 app.listen(PORT, function () {
