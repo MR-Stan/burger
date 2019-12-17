@@ -2,8 +2,8 @@
     <center>
 
         <div class="col-md-6">
-            <h4 class="red_font">Eat da burger!</h4>
-            <div id="ready_to_eat">
+            <h4 class="heading">Eat da burger!</h4>
+            <div id="eat">
                 {{#each burgers}}
                 {{#unless devoured}}
                 <form action="burger/eat/{{id}}" method="POST">
@@ -20,9 +20,8 @@
         </div>
 
         <div class="col-md-6">
-            <h4 class="red_font">In da belly!</h4>
-            <div id="already_eaten">
-
+            <h4 class="heading">In da belly!</h4>
+            <div id="ate">
                 {{#each burgers}}
                 {{#if this.devoured}}
                 <div class="input-group">
